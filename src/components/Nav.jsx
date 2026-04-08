@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-scroll";
-import Logo from '../assets/bulb_logo.png'
+import Logo from '../assets/orHealthLogo.png'
 import { HiMenu, HiX } from 'react-icons/hi';
 
 export default function Nav() {
@@ -8,56 +8,54 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
 
   const menuList = [
-    {name:'Home', id:'home'},
-    {name:'About Us', id:'about'},
-    {name:'Services', id:'services'},
-    {name:'Testimony', id:'testimony'},
-    {name:'Contact', id:'contact'}
-  ]
+    { name: 'Home', id: 'home' },
+    { name: 'About Us', id: 'about' },
+    { name: 'Services', id: 'services' },
+    { name: 'Testimony', id: 'testimony' },
+    { name: 'Contact', id: 'contact' }
+  ];
 
-  // Change navbar style on scroll
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <div className={`w-full bg-gradient-to-r from-[#21421E] to-[#B2AC88] sticky top-0 z-50 
-      transition-all duration-300
-      ${scrolled 
-        ? 'bg-[#666d5b]/95 backdrop-blur-md py-3 shadow-lg' 
-        : 'bg-[#666d5b]/50 backdrop-blur-sm py-6' 
-      }
-    `}>
-      <div className='px-6 md:px-16'>
-        <nav className='flex items-center justify-between'>
+    <div
+      className={`w-full sticky top-0 z-50 transition-all duration-300
+      ${scrolled
+        ? 'bg-[#666d5b]/95 backdrop-blur-md shadow-lg'
+        : 'bg-[#666d5b]/50 backdrop-blur-sm'
+      }`}
+    >
+      <div className='px-4 md:px-10 lg:px-16'>
+
+        {/* NAV HEIGHT FIXED */}
+        <nav className='flex items-center justify-between h-[85px]'>
+
           {/* Logo */}
           <div className="flex items-center relative">
-            {/* Glow effect */}
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-8 rounded-full bg-yellow-300/50 blur-3xl pointer-events-none"></div>
+            {/* Glow */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 
+              w-32 h-12 bg-yellow-300/40 blur-3xl rounded-full pointer-events-none">
+            </div>
 
-            <img 
-              src={Logo} 
-              alt="OryCare Logo" 
-              className="rounded-full h-16 w-16 relative z-10" 
+            <img
+              src={Logo}
+              alt="OryCare Logo"
+              className={`
+                w-auto object-contain relative z-10 transition-all duration-300
+                ${scrolled ? 'h-[150px]' : 'h-[200px]'}
+              `}
             />
-
-            <h1 className={`text-2xl font-semibold font-Merriweather ml-4 ${scrolled ? 'text-white' : 'text-[#666d5b]'}`}>
-              <span className='text-white'>ORY</span>
-              <span className='text-[#D9CA77]'>Health</span>
-            </h1>
           </div>
 
-          {/* Desktop menu centered */}
-          <ul className='hidden md:flex items-center gap-6 text-white font-medium mx-auto'>
+          {/* Desktop Menu */}
+          <ul className='hidden md:flex items-center gap-6 text-white text-base font-medium mx-auto'>
             {menuList.map((item, index) => (
               <Link
                 key={index}
@@ -65,34 +63,38 @@ export default function Nav() {
                 smooth={true}
                 duration={500}
                 spy={true}
+                offset={-90}
                 activeClass="font-bold underline underline-offset-4"
-                className='hover:text-[#666d5b] cursor-pointer transition-colors duration-200'
+                className='hover:text-[#D9CA77] cursor-pointer transition-colors duration-200'
               >
                 {item.name}
-              </Link> 
+              </Link>
             ))}
           </ul>
 
-          {/* Get Started button */}
+          {/* Button */}
           <div className='hidden md:flex'>
-            <button className='bg-[#D9CA77] text-[#21421E] font-semibold px-5 py-2 rounded-lg hover:bg-yellow-400 transition-colors duration-200'>
+            <button className='bg-[#D9CA77] text-[#21421E] 
+              font-semibold px-5 py-2 rounded-lg 
+              hover:bg-yellow-400 transition'>
               Get Started
             </button>
           </div>
 
-          {/* Mobile menu button */}
-          <button 
+          {/* Mobile Menu Button */}
+          <button
             className='md:hidden text-white text-2xl'
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <HiX /> : <HiMenu />}
           </button>
+
         </nav>
 
-        {/* Mobile menu dropdown */}
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className='md:hidden mt-4 py-4 border-t border-white/20'>
-            <ul className='flex flex-col gap-4 text-white font-medium'>
+          <div className='md:hidden py-4 border-t border-white/20'>
+            <ul className='flex flex-col gap-4 text-white text-sm font-medium'>
               {menuList.map((item, index) => (
                 <Link
                   key={index}
@@ -100,21 +102,25 @@ export default function Nav() {
                   smooth={true}
                   duration={500}
                   spy={true}
+                  offset={-90}
                   onClick={() => setIsMobileMenuOpen(false)}
                   activeClass="font-bold"
-                  className='hover:text-white/80 cursor-pointer transition-colors duration-200 block py-2'
+                  className='hover:text-white/80 cursor-pointer block py-2'
                 >
                   {item.name}
-                </Link> 
+                </Link>
               ))}
-              {/* Mobile Get Started button */}
-              <button className='mt-2 bg-[#D9CA77] text-[#21421E] font-semibold px-5 py-2 rounded-lg hover:bg-yellow-400 transition-colors duration-200'>
+
+              <button className='mt-2 bg-[#D9CA77] text-[#21421E] 
+                font-semibold px-5 py-2 rounded-lg 
+                hover:bg-yellow-400 transition'>
                 Get Started
               </button>
             </ul>
           </div>
         )}
+
       </div>
     </div>
-  )
+  );
 }
