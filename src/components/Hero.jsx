@@ -31,7 +31,7 @@ export default function Hero() {
               <img
                 src={HeroMinor}
                 alt="Hero Minor"
-                className="w-48 md:w-52 lg:w-60 mx-auto md:mx-0"
+                className="w-48 md:w-52 lg:w-60 mx-auto md:mx-0 scale-150"
               />
 
               {/* Heading */}
