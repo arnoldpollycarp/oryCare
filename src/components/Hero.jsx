@@ -21,11 +21,11 @@ export default function Hero() {
         <div className="absolute inset-0 bg-white/50 z-0"></div>
 
         {/* CONTENT */}
-        <div className="relative z-10 px-6 md:px-16 py-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-7xl mx-auto">
+        <div className="relative px-6 md:px-16 py-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
 
             {/* LEFT */}
-            <div className="flex flex-col justify-center gap-2 text-center md:text-left max-w-3xl">
+            <div className="flex flex-col justify-center z-50 gap-2 text-center md:text-left max-w-3xl">
 
               {/* Image */}
               <img
@@ -88,7 +88,7 @@ export default function Hero() {
           {/* BACK WAVE */}
           <svg viewBox="0 0 1440 120" className="absolute bottom-0 w-full h-[120px]" preserveAspectRatio="none">
             <path
-              d="M0,80 C300,10 600,150 900,80 C1100,30 1300,100 1440,60 L1440,120 L0,120 Z"
+              d="M0,60 C300,-10 600,130 900,60 C1100,10 1300,80 1440,40 L1440,120 L0,120 Z"
               fill="#d1d5db"
               opacity="0.5"
             />
@@ -104,9 +104,9 @@ export default function Hero() {
           </svg>
 
           {/* WHITE WAVE (TOP) */}
-          <svg viewBox="0 0 1440 120" className="absolute bottom-0 w-full h-[80px] z-30" preserveAspectRatio="none">
+          <svg viewBox="0 0 1440 140" className="absolute bottom-0 w-full h-[100px] z-30" preserveAspectRatio="none">
             <path
-              d="M0,20 Q720,110 1440,20 L1440,120 L0,120 Z"
+              d="M0,40 Q720,130 1440,40 L1440,140 L0,140 Z"
               fill="#ffffff"
             />
           </svg>
