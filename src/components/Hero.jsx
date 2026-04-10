@@ -14,7 +14,7 @@ export default function Hero() {
       {/* HERO SECTION (IMPORTANT: relative + min height) */}
       <div
         className="relative bg-cover bg-center min-h-[90vh] flex flex-col justify-between"
-        style={{ backgroundImage: `url(${HeroImg})` }}
+        style={{ backgroundImage: `url(${HeroImg})`, backgroundAttachment: "fixed"}}
       >
 
         {/* Overlay */}
@@ -25,7 +25,7 @@ export default function Hero() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
 
             {/* LEFT */}
-            <div className="flex flex-col justify-center z-50 gap-2 text-center md:text-left max-w-3xl">
+            <div className="flex flex-col justify-center z-30 gap-2 text-center md:text-left max-w-3xl">
 
               {/* Image */}
               <img
