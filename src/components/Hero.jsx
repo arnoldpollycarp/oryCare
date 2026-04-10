@@ -35,7 +35,7 @@ export default function Hero() {
               />
 
               {/* Heading */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#666d5b] leading-tight">
+              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#666d5b] leading-tight">
                 Bring Light <span className="text-[#21421E]">To Mental Wellness.</span>
               </h1>
 
@@ -45,7 +45,7 @@ export default function Hero() {
               </p>
 
               {/* Button */}
-              <div className='flex flex-row gap-2'>
+              <div className='flex flex-row gap-2 text-sm md:text-base justify-center md:justify-start mt-4'>
                 <button className="bg-[#D9CA77] text-[#21421E] px-8 py-3 rounded-lg font-semibold 
                   shadow-md hover:scale-105 hover:shadow-lg 
                   transition-all duration-300">
@@ -116,7 +116,7 @@ export default function Hero() {
       </div>
 
       {/* SECTION BELOW */}
-      <div className="flex flex-col md:flex-row justify-center items-center gap-10 p-10 bg-white">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-10 p-10 bg-white md:divide-x-2 md:divide-gray-300 md:divide-y-0 divide-y-2 divide-gray-300">
 
         <div className="flex items-center">
           <img src={Bulb} className="w-32 h-32 md:w-44 md:h-44" />
