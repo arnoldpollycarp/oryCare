@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div className='w-full bg-[#666d5b] fixed bottom-0 z-50 
+    <div className='w-full bg-[#666d5b] 
       transition-all duration-300
       bg-[#666d5b]/95 backdrop-blur-md py-3 shadow-lg'>
       <div className='px-6 md:px-16'>

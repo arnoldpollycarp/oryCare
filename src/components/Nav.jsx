@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
 import Logo from '../assets/orHealthLogo.png'
 import { HiMenu, HiX } from 'react-icons/hi';
+import { Link, useLocation } from 'react-router-dom';
+import { path } from 'framer-motion/client';
 
 export default function Nav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const menuList = [
-    { name: 'Home', id: 'home' },
-    { name: 'About Us', id: 'about' },
-    { name: 'Services', id: 'services' },
-    { name: 'Testimony', id: 'testimony' },
-    { name: 'Contact', id: 'contact' }
+    { name: 'Home', id: '/', path: '/' },
+    { name: 'About Us', id: 'about', path: '/about' },
+    { name: 'Services', id: 'services', path: '/services' },
+    { name: 'Testimony', id: 'testimony', path: '/testimony' },
+    { name: 'Contact', id: 'contact', path: '/contact' }
   ];
 
   useEffect(() => {

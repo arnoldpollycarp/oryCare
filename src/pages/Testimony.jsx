@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
 import Test_1 from "../assets/test_1.jpg";
 import Test_2 from "../assets/test_2.jpg";
 import Test_3 from "../assets/test_3.jpg";
 import Test_4 from "../assets/test_4.jpg";
 import Test_5 from "../assets/test_5.jpg";
 import Test_6 from "../assets/test_6.jpg";
+import Title from "../components/Title";
 
 export default function Testimony() {
   const testimonials = [
@@ -104,9 +104,7 @@ export default function Testimony() {
       className="px-6 md:px-16 py-20 bg-gray-50 overflow-hidden"
       id="testimony"
     >
-      <h1 className="text-4xl font-bold text-center mb-14">
-        Client Testimonials
-      </h1>
+      <Title>What Our Clients Say</Title>
 
       <div className="relative max-w-7xl mx-auto">
 

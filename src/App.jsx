@@ -1,24 +1,24 @@
 import { useState } from 'react'
 import './App.css'
-import Nav from './components/Nav'
-import Hero from './components/Hero'
-import Services from './components/Services'
-import Testimony from './components/Testimony'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import AboutUs from './components/AboutUs'
+import { Routes, Route } from 'react-router-dom'
+import HomeLayout from './layout/HomeLayout'
+import Hero from './pages/Hero'
+import Services from './pages/Services'
+import Testimony from './pages/Testimony'
+import Contact from './pages/Contact'
+import AboutUs from './pages/AboutUs'
 
 function App() {
   return (
-    <>
-      <Nav />
-      <Hero />
-      <AboutUs />
-      <Services />
-      <Testimony />
-      <Contact />
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<HomeLayout />}>
+        <Route index element={<Hero />} />
+        <Route path="about" element={<AboutUs />} />
+        <Route path="services" element={<Services />} />
+        <Route path="testimony" element={<Testimony />} />
+        <Route path="contact" element={<Contact />} />
+      </Route>
+    </Routes>
   )
 }
 

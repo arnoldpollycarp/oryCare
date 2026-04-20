@@ -1,13 +1,11 @@
 import React from "react";
 import ContactImage from "../assets/Dr-Comm-removebg-preview.png";
+import Title from "../components/Title";
 
 export default function Contact() {
   return (
     <section className="px-6 md:px-16 pt-8 pb-16" id="contact">
-      <h1 className="text-4xl font-bold mb-10 text-center">
-        Contact Us
-      </h1>
-
+      <Title>Contact Us</Title>
       <div className="flex flex-col md:flex-row items-center gap-12">
         
         {/* Left Side */}
